@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+:root {
+  --roxo-escuro: #2b0052;
+  --roxo: #6b00b3;
+  --roxo-claro: #b266ff;
+  --branco: #ffffff;
+  --cinza: #f7f4fc;
+  --sombra: rgba(0, 0, 0, 0.1);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Cal Sans', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo));
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container do card */
+.center-page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  background: var(--branco);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px var(--sombra);
+  padding: 40px 36px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+}
+
+.card h1 {
+  color: var(--roxo);
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.card .muted {
+  color: #5f5a6b;
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+/* Formulário */
+.form label {
+  display: block;
+  text-align: left;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: var(--roxo-escuro);
+}
+
+.form input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+  margin-top: 6px;
+  font-size: 15px;
+}
+
+.form input:focus {
+  border-color: var(--roxo);
+  box-shadow: 0 0 0 2px rgba(107, 0, 179, 0.1);
+}
+
+/* Botão */
+.btn {
+  border: none;
+  cursor: pointer;
+  padding: 10px 14px;
+  font-size: 15px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.btn.primary {
+  background: var(--roxo);
+  color: var(--branco);
+  width: 100%;
+  margin-top: 10px;
+}
+
+.btn.primary:hover {
+  background: var(--roxo-claro);
+  transform: scale(1.02);
+}
+
+/* Responsivo */
+@media (max-width: 450px) {
+  .card {
+    padding: 28px 24px;
+  }
+
+  .card h1 {
+    font-size: 24px;
+  }
+}

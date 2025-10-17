@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+:root {
+  --roxo-escuro: #2b0052;
+  --roxo: #6b00b3;
+  --roxo-claro: #b266ff;
+  --branco: #ffffff;
+  --cinza: #f3f0fa;
+  --sombra: rgba(0, 0, 0, 0.1);
+  --radius: 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cal Sans', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, var(--roxo-escuro), var(--roxo));
+  min-height: 100vh;
+  color: var(--roxo-escuro);
+}
+
+/* HEADER */
+header {
+  background: var(--roxo-escuro);
+  color: var(--branco);
+  padding: 16px 24px;
+  box-shadow: 0 2px 10px var(--sombra);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav h1 {
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: var(--branco);
+  text-decoration: none;
+  background: var(--roxo);
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  transition: 0.2s;
+}
+
+nav a:hover {
+  background: var(--roxo-claro);
+}
+
+/* MAIN */
+main {
+  max-width: 900px;
+  margin: 40px auto;
+  background: var(--cinza);
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px var(--sombra);
+  padding: 24px;
+}
+
+/* HEADER DO DASHBOARD */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h2 {
+  font-size: 28px;
+  color: var(--roxo);
+  margin-bottom: 8px;
+}
+
+.dashboard-header p {
+  color: #5f5a6b;
+  margin-bottom: 16px;
+}
+
+.dashboard-header a {
+  display: inline-block;
+  background: var(--roxo);
+  color: var(--branco);
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: var(--radius);
+  transition: 0.2s;
+}
+
+.dashboard-header a:hover {
+  background: var(--roxo-claro);
+}
+
+/* TABELA */
+.turmas-section h3 {
+  color: var(--roxo);
+  margin-bottom: 12px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--branco);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: 0 3px 10px var(--sombra);
+}
+
+thead {
+  background: var(--roxo);
+  color: var(--branco);
+}
+
+th,
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background: #f8f6ff;
+}
+
+tbody tr:hover {
+  background: #ede6ff;
+}
+
+/* Botões da tabela */
+button,
+.tabela-btn {
+  background: var(--roxo);
+  color: var(--branco);
+  border: none;
+  border-radius: 6px;
+  padding: 6px 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover,
+.tabela-btn:hover {
+  background: var(--roxo-claro);
+}
+
+/* RESPONSIVO */
+@media (max-width: 700px) {
+  main {
+    margin: 20px;
+    padding: 16px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  nav h1 {
+    font-size: 20px;
+  }
+}
+
+/* === MODAL === */
+.modal {
+  display: none; /* 🔹 começa escondido */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h3 {
+  margin-bottom: 16px;
+}
+
+.modal-content input {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}

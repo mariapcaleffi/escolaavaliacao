@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap');
+
+:root {
+  --roxo-claro: #c7b8ea;
+  --roxo-medio: #8a6bd1;
+  --roxo-escuro: #5c3db5;
+  --roxo-hover: #6b4bc7;
+  --fundo: #f6f4fc;
+  --texto: #2a2240;
+  --branco: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Cal Sans", sans-serif;
+}
+
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+  min-height: 100vh;
+}
+
+/* ===== HEADER ===== */
+.topbar {
+  background: var(--roxo-escuro);
+  color: var(--branco);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.brand {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.btn {
+  border: none;
+  border-radius: 10px;
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  font-size: 0.95rem;
+}
+
+/* ===== BOTÕES ===== */
+.btn.primary {
+  background: var(--roxo-medio);
+  color: var(--branco);
+}
+
+.btn.primary:hover {
+  background: var(--roxo-hover);
+}
+
+.btn.ghost {
+  background: transparent;
+  color: var(--branco);
+  border: 1.5px solid var(--branco);
+}
+
+.btn.ghost:hover {
+  background: var(--branco);
+  color: var(--roxo-escuro);
+}
+
+/* ===== MAIN ===== */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: var(--branco);
+  padding: 2rem;
+  border-radius: 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+}
+
+.top-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.top-actions h2 {
+  font-size: 1.8rem;
+  color: var(--roxo-escuro);
+}
+
+/* ===== LISTA DE ATIVIDADES ===== */
+section h3 {
+  font-size: 1.3rem;
+  color: var(--roxo-escuro);
+  margin-bottom: 0.8rem;
+}
+
+ul {
+  list-style: none;
+}
+
+#atividadesList li {
+  background: var(--roxo-claro);
+  margin-bottom: 0.7rem;
+  padding: 1rem;
+  border-radius: 10px;
+  color: var(--texto);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#atividadesList li:hover {
+  background: #b8a6e5;
+}
+
+.list-empty::before {
+  content: "Nenhuma atividade cadastrada.";
+  display: block;
+  text-align: center;
+  padding: 2rem 0;
+  color: #777;
+  font-style: italic;
+}
+
+/* ===== MODAL ===== */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content {
+  background: var(--branco);
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  animation: aparecer 0.25s ease;
+}
+
+@keyframes aparecer {
+  from {
+    transform: translateY(-15px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal-content h3 {
+  color: var(--roxo-escuro);
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.6rem;
+  color: var(--texto);
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--roxo-claro);
+  font-size: 1rem;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+textarea:focus {
+  border-color: var(--roxo-medio);
+  box-shadow: 0 0 0 2px rgba(138,107,209,0.2);
+}
+
+.modal-actions {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* === MODAL === */
+.modal {
+  display: none; /* 🔹 começa invisível */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  text-align: left;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.modal-content textarea {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+}

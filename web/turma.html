@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Turma — EscolaAvaliação</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="turma.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">ESCOLAAVALIACAO</div>
+    <div class="right">
+      <button class="btn ghost" onclick="history.back()">Voltar</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="top-actions">
+      <h2 id="turmaNome">Turma</h2>
+      <div>
+        <button class="btn primary" id="openNewAtv">Cadastrar atividade</button>
+      </div>
+    </div>
+
+    <section>
+      <h3>Atividades</h3>
+      <ul id="atividadesList" class="list-empty">
+        <!-- preenchido via JS -->
+      </ul>
+    </section>
+  </main>
+
+  <!-- Modal cadastrar atividade -->
+  <div class="modal" id="modalAtv">
+    <div class="modal-content">
+      <h3>Cadastrar nova atividade</h3>
+      <form id="formAtv">
+        <label>Descrição
+          <textarea id="descricaoAtv" rows="4" required placeholder="Descreva a atividade"></textarea>
+        </label>
+        <div class="modal-actions">
+          <button type="button" class="btn ghost" id="closeAtv">Cancelar</button>
+          <button type="submit" class="btn primary">Cadastrar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="turma.js"></script>
+</body>
+</html>
